@@ -1,0 +1,5 @@
+
+
+.video{
+    clip-path: circle(var(--clip)at 50% 50%);
+}

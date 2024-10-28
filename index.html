@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="tailwind.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main w-full bg-zinc-900 text-white">
+    <div id="page1" class="home section w-full h-[200vh] relative">
+      <div style="--clip:100%" class="video z-[3] w-full h-screen absolute top-0 left-0 overflow-hidden ">
+        <video autoplay muted loop class="absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  object-cover" src="video.mp4"></video>
+      </div>
+      <div class="text w-full h-screen relative overflow-hidden">
+        <div class="textcontent md:text-1xl md:w-2 text-9xl scale-[1] absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-900">
+          <div class="text1 flex">
+            <h1>R</h1>
+            <div class="innertext flex items-end w-0 overflow-hidden">
+              <h3 class="text-2xl">evolutionary</h3>
+            </div>
+          </div>
+          <div class="text1 flex">
+            <h1>I</h1>
+            <div class="innertext flex items-end w-0 overflow-hidden">
+              <h3 class="text-2xl">nnovative</h3>
+            </div>            <!-- <h3 class="hidden">nnovative</h3> -->
+          </div>
+          <div class="text1 flex">
+            <h1>V</h1>
+            <div class="innertext flex items-end w-0 overflow-hidden">
+              <h3 class="text-2xl">ersatile</h3>
+            </div>
+            <!-- <h3 class="hidden">ersatile</h3> -->
+          </div>
+          <div class="text1 flex">
+            <h1>V</h1>
+            <div class="innertext flex items-end w-0 overflow-hidden">
+              <h3 class="text-2xl">itality</h3>
+            </div>
+            <!-- <h3 class="hidden">itality</h3> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="page2" class="w-full h-screen">
+
+    </div>
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
