@@ -1,5 +1,18 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from 'lenis'
+
+const lenis = new Lenis();
+
+lenis.on('scroll');
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 
 var x=window.matchMedia("(min-width:600px)")
 
@@ -13,9 +26,8 @@ var tl=gsap.timeline({
         scrub:1,
         start:"0% top",
         end:"bottom 100%",
-        markers:true,
-        pin:true
-        
+        // markers:true,
+        pin:true   
     }
 });
 tl.to(".video",{
@@ -34,7 +46,6 @@ tl.to(".video",{
 
 
     if(x.matches){
-        console.log('hello')
             tl.to(".text1 h1",{
                 fontSize:"14rem"
             },"b")
