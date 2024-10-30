@@ -8,7 +8,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="main w-full bg-zinc-900 text-white">
+  <div class="main w-full bg-zinc-900 text-white overflow-x-hidden">
+    <div class="loader flex flex-col justify-center items-center w-full h-screen fixed top-0 left-0 z-[9] bg-zinc-900">
+      <div class="logo"></div>
+      <div class="logotext text-center h-[1.5rem] overflow-hidden">
+        <h1 class="relative top-6 ">Unveiling the New Wave of Style...</h1>
+        <h1 class="relative ">Loading Vibes, Setting Trends...</h1>
+        <h1 class="relative ">Setting the Scene for Fresh Fashion...</h1>
+        <h1 class="relative ">Your Style, Just a Moment Away...</h1>
+        <h1 class="relative ">Get Ready to Ride the Rivv...</h1>
+      </div>
+      <div class="progressbar mt-4 w-60 h-1 bg-zinc-600 overflow-hidden rounded-full ">
+        <div class="progress bg-zinc-100 w-0 h-1"></div>
+      </div>
+    </div>
     <div id="page1" class="home section w-full h-[200vh] relative">
       <div style="--clip:100%" class="video z-[3] w-full h-screen absolute top-0 left-0 overflow-hidden ">
         <video autoplay muted loop class="absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  object-cover" src="video.mp4"></video>

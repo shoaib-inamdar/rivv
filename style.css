@@ -3,3 +3,34 @@
 .video{
     clip-path: circle(var(--clip)at 50% 50%);
 }
+
+.logotext h1{
+    position: relative;
+    animation: loaderanimation 8s ease-in-out infinite;
+    /* animation-delay: 1.5s; */
+}
+
+.progress{
+    /* width: 100%; */
+}
+@keyframes loaderanimation {
+    0%{
+        top: 1.5rem;
+    }
+    20%{
+        top: 0;
+    }
+    40%{
+        top: -1.5rem;
+    }
+    60%{
+        top: -3rem;
+    }
+    80%{
+        top: -4.5rem;
+    }
+    100%{
+        top: -6rem;
+    }
+    
+}

@@ -2,7 +2,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis'
 
-const lenis = new Lenis();
+function lenis(){
+    const lenis = new Lenis();
 
 lenis.on('scroll');
 
@@ -12,7 +13,9 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+}
 
+lenis()
 
 var x=window.matchMedia("(min-width:600px)")
 
@@ -20,6 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.set(".textcontent h1",{
     scale:100
 })
+var tl2=gsap.timeline();
 var tl=gsap.timeline({
     scrollTrigger:{
         trigger:".home",
@@ -30,6 +34,21 @@ var tl=gsap.timeline({
         pin:true   
     }
 });
+var progress=document.querySelector(".progress")
+tl2.to(progress,{
+    width:"100%",
+    // ease:"power2.out",
+    ease: "power1.inOut",
+    duration:8
+})
+tl2.to(".loader",{
+    opacity:0,
+    // ease:"power2.out",
+    // duration:5
+})
+tl2.to(".loader",{
+    display:"none"
+})
 tl.to(".video",{
     "--clip":"0%",
 },"a")
@@ -50,3 +69,17 @@ tl.to(".video",{
                 fontSize:"14rem"
             },"b")
     }
+
+
+
+
+//     var increment=1.5+"rem"
+//     var logotexth1=document.querySelectorAll(".logotext>h1").forEach(function(e){
+//     gsap.to(e,{
+//         top:"-="+increment,
+//         // ease:"power2.out",
+//         repeat:-1,
+//         // duration:4.5
+//     })
+//     increment-=1.5+"rem"
+// })
