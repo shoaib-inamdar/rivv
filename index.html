@@ -6,10 +6,13 @@
   <title>Document</title>
   <link rel="stylesheet" href="tailwind.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
 <body>
   <div class="main w-full bg-zinc-900 text-white overflow-x-hidden">
-    <div class="loader flex flex-col justify-center items-center w-full h-screen fixed top-0 left-0 z-[9] bg-zinc-900">
+    <div class="loader hidden font-[Urbanist] flex flex-col justify-center items-center w-full h-screen fixed top-0 left-0 z-[9] bg-zinc-900">
       <div class="logo"></div>
       <div class="logotext text-center h-[1.5rem] overflow-hidden">
         <h1 class="relative top-6 ">Unveiling the New Wave of Style...</h1>
@@ -22,9 +25,9 @@
         <div class="progress bg-zinc-100 w-0 h-1"></div>
       </div>
     </div>
-    <div id="page1" class="home section w-full h-[200vh] relative">
+    <div id="page1" class="home hidden section w-full h-[200vh] relative">
       <div style="--clip:100%" class="video z-[3] w-full h-screen absolute top-0 left-0 overflow-hidden ">
-        <video autoplay muted loop class="absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  object-cover" src="video.mp4"></video>
+        <video autoplay muted loop class="absolute w-auto h-auto object-fill" src="video.mp4"></video>
       </div>
       <div class="text w-full h-screen relative overflow-hidden">
         <div class="textcontent md:text-1xl md:w-2 text-9xl scale-[1] absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-900">
@@ -45,22 +48,73 @@
             <div class="innertext flex items-end justify-end w-0 overflow-hidden">
               <h3 class="text-2xl underline">ersatile</h3>
             </div>
-            <!-- <h3 class="hidden">ersatile</h3> -->
           </div>
           <div class="text1 flex ">
             <h1 class="sm:text-2xl text-7xl">V</h1>
             <div class="innertext flex items-end justify-end w-0 overflow-hidden">
               <h3 class="text-2xl underline">itality</h3>
             </div>
-            <!-- <h3 class="hidden">itality</h3> -->
           </div>
         </div>
       </div>
     </div>
-    <div id="page2" class="marquees w-full h-screen">
+    <div class="homepage hidden w-full">
+          <div class="homecontent relative text-[8rem] leading-tight flex flex-col justify-center items-center">
+            <div class="imgdiv sticky top-52 z-[2] w-[25vw]">
+              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+            <h1>Where Style</h1>
+            <h1 class="relative z-[3]">Meets</h1>
+            <h1>the next wave</h1>
+          </div>
+        </div>
+        <div class="hero w-full h-screen relative overflow-hidden">
+          <div class="canvas w-full h-screen absolute z-[5] top-0 left-0">
+            <canvas id="canvas"></canvas>  
+
+          </div>
+      <div class="nav w-full scale-x-0 lg:px-10 fixed top-0 left-1/2 -translate-x-1/2  z-[5]">
+        <nav class="w-full mt-7 py-4 lg:px-10 flex justify-between items-center bg-[rgba(225,225,225,.2)] backdrop-blur rounded-md">
+          <div class="logo">Rivv</div>
+          <div class="join border-[1px] border-[#E0A96D] py-2 px-4 rounded-full">join us</div>
+        </nav>
+      </div>
+      
+      <div class="hero-content relative w-full h-screen font-[Urbanist] flex flex-col lg:gap-10 gap-48 justify-center">
+        <h1 class="pl-5 lg:text-9xl text-5xl tracking-tight font-semibold text-[#E0A96D]">Ride the Trend</h1>
+        <h1 class="pr-5 lg:text-9xl text-5xl tracking-tight font-semibold text-[#E0A96D] text-right z-[6] relative">Live the Rivv</h1>
+        <div class="description absolute pb-10 lg:pb-5 pl-5 bottom-0 left-0 w-1/2 lg:w-1/3 leading-none">
+          <p>Rivv isn’t just fashion; it’s a movement for those who lead with boldness and creativity. Find pieces that inspire, empower, and elevate your wardrobe to a new level. Embrace the adventure of self-expression, and let your style be as limitless as you are</p>
+        </div>
+      </div>
+    </div>
+    <div class="marquees hidden w-full whitespace-nowrap overflow-x-auto overflow-y-hidden ">
+        <h1 class="inline-block ml-[4rem] text-7xl">Express Yourself</h1>
+        <h1 class="inline-block ml-[4rem] text-7xl">Stand Out</h1>
+        <h1 class="inline-block ml-[4rem] text-7xl">Effortlessly Bold</h1>
+        <h1 class="inline-block ml-[4rem] text-7xl">Feel the Flow</h1>
+        <h1 class="inline-block ml-[4rem] text-7xl">Live the Rivv</h1>
+        <h1 class="inline-block ml-[4rem] text-7xl">Own the Moment</h1>
+    </div>
+    <div id="page2" class="">
 
     </div>
+    <div class="page3 w-full h-screen">
+      <div class="cards w-full h-full p-10 flex justify-between">
+        <div class="card p-10 bg-zinc-600 lg:w-2/5 h-fit rounded-lg">
+          <div class="cardimg w-full bg-red-900 rounded-lg overflow-hidden">
+            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+          </div>
+          <div class="cardtext mt-10">
+              <h1 class="text-4xl">T-Shirt</h1>
+              <h2 class="mt-5 text-xl">₹200/-</h2>
+          </div>
+          <div class="price"></div>
+        </div>
+      </div>
+    </div>
   </div>
+  <script type="module" src="three.js"></script>
   <script type="module" src="script.js"></script>
 </body>
 </html>

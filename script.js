@@ -49,6 +49,37 @@ tl2.to(".loader",{
 tl2.to(".loader",{
     display:"none"
 })
+tl2.from('.hero-content h1:nth-child(1)',{
+    x:-800,
+    duration:1,
+    ease:"expo.out"
+},"hero")
+tl2.from('.hero-content h1:nth-child(2)',{
+    x:800,
+    duration:1,
+    ease:"expo.out"
+},"hero")
+tl2.from('.nav',{
+    y:-100,
+    opacity:0,
+    duration:1
+},"hero")
+tl2.to('.nav',{
+    scaleX:1,
+    duration:1,
+    ease:"expo.inOut"
+})
+// tl.to('.hero-content h1:nth-child(1)',{
+//     x:800,
+//     duration:1,
+//     ease:"expo.out"
+// },'hero2')
+// tl.to('.hero-content h1:nth-child(2)',{
+//     x:-800,
+//     duration:1,
+//     ease:"expo.out"
+// },"hero2")
+
 tl.to(".video",{
     "--clip":"0%",
 },"a")
@@ -59,16 +90,16 @@ tl.to(".video",{
     //     flexDirection:'column',
     //     ease:"power2.out"
     // },"b")
-    tl.to(".innertext",{
-        width:"100%",
-    },"b")
+tl.to(".innertext",{
+    width:"100%",
+},"b")
 
 
-    if(x.matches){
-            tl.to(".text1 h1",{
-                fontSize:"14rem"
-            },"b")
-    }
+if(x.matches){
+    tl.to(".text1 h1",{
+    fontSize:"14rem"
+},"b")
+}
 
 
 

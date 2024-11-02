@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: gendy;
+    src: url(gendy.otf);
+}
 
 .video{
     clip-path: circle(var(--clip)at 50% 50%);
@@ -12,6 +15,10 @@
 
 .progress{
     /* width: 100%; */
+}
+.marquees h1{
+    animation: marquee 3s linear infinite;
+
 }
 @keyframes loaderanimation {
     0%{
@@ -34,3 +41,12 @@
     }
     
 }
+
+@keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 10px));
+    }
+  }
