@@ -37,7 +37,7 @@ const loader = new GLTFLoader()
 let model;
 
 loader.load(
-    'Tshirt.glb',
+    '/Tshirt.glb',
     function (gltf) {
         model = gltf.scene
         scene.add(model)
