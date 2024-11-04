@@ -95,10 +95,14 @@ tl.to(".innertext",{
 },"b")
 
 
-if(x.matches){
-    tl.to(".text1 h1",{
-    fontSize:"14rem"
-},"b")
+if(!x.matches){
+gsap.set(".cursor",{
+    display:"none"
+})
+}else{
+    gsap.set(".cursor",{
+        display:"initial"
+    })
 }
 
 function para_effect(){
@@ -129,6 +133,18 @@ gsap.to(".para-effect span",{
 }
 para_effect()
 
+function cursor(){
+    window.addEventListener("mousemove",function(e){
+        gsap.to(".cursor",{
+            x:e.clientX,
+            y:e.clientY,
+            opacity:1
+            
+        })
+    }
+    )
+}
+cursor()
 
 //     var increment=1.5+"rem"
 //     var logotexth1=document.querySelectorAll(".logotext>h1").forEach(function(e){
