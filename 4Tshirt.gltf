@@ -1,0 +1,193 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.4.0)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 468222,
+            "type": "VEC3",
+            "max": [
+                420.68939208984375,
+                1562.2449951171875,
+                163.94349670410156
+            ],
+            "min": [
+                -415.9725036621094,
+                842.7816162109375,
+                -167.5319061279297
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 468222,
+            "type": "VEC3",
+            "max": [
+                0.9999997615814209,
+                0.9999971389770508,
+                1.0
+            ],
+            "min": [
+                -0.9999983310699463,
+                -0.9999654293060303,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 468222,
+            "type": "VEC2",
+            "max": [
+                0.9850038886070251,
+                0.9850037097930908
+            ],
+            "min": [
+                0.014996293000876904,
+                0.06180572509765625
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 2466720,
+            "type": "SCALAR",
+            "max": [
+                468221
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 24849984,
+            "uri": "Animated Walking 4Tshirt_0.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 5618664,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 5618664,
+            "byteLength": 5618664,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 11237328,
+            "byteLength": 3745776,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 14983104,
+            "byteLength": 9866880,
+            "target": 34963
+        }
+    ],
+    "images": [
+        {
+            "uri": "image_0.png"
+        }
+    ],
+    "materials": [
+        {
+            "name": "Shirt Texture",
+            "pbrMetallicRoughness": {
+                "baseColorTexture": {
+                    "index": 0
+                },
+                "metallicFactor": 0.05000000074505806
+            },
+            "doubleSided": true
+        }
+    ],
+    "meshes": [
+        {
+            "name": "meshes[0]",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "Animated Walking 4Tshirt",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "cloth_parent",
+            "matrix": [
+                0.005010626278817654,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.005010626278817654,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.005010626278817654,
+                0.0,
+                0.23498070240020752,
+                -4.225375175476074,
+                0.0,
+                1.0
+            ],
+            "mesh": 0,
+            "extras": {
+                "name": "cloth_parent"
+            }
+        }
+    ],
+    "samplers": [
+        {
+            "magFilter": 9729,
+            "minFilter": 9987
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "textures": [
+        {
+            "source": 0,
+            "sampler": 0
+        }
+    ],
+    "scene": 0
+}

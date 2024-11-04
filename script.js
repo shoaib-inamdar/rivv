@@ -101,7 +101,33 @@ if(x.matches){
 },"b")
 }
 
-
+function para_effect(){
+    var clutter="";
+document.querySelector(".para-effect")
+.textContent.split("")
+.forEach(function(e){
+    if(e==="") clutter+=`<span>$nbsp;</span>`
+    clutter+=`<span>${e}</span>`;
+})
+document.querySelector(".para-effect").innerHTML=clutter;
+gsap.set(".para-effect span",{
+    opacity:.01
+})
+gsap.to(".para-effect span",{
+    opacity:1,
+    stagger:.03,
+    ease:"power4",
+    scrollTrigger:{
+        trigger:".page2",
+        scrub:2,
+        start:"top top",
+        end:"200% bottom",
+        pin:true,
+        // markers:true
+    }
+})
+}
+para_effect()
 
 
 //     var increment=1.5+"rem"
