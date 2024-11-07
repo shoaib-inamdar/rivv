@@ -37,7 +37,7 @@ const loader = new GLTFLoader()
 let model;
 
 loader.load(
-    '4Tshirt.glb',
+    '/models/4Tshirt.glb',
     function (gltf) {
         model = gltf.scene
         scene.add(model)
@@ -63,9 +63,9 @@ loader.load(
 window.addEventListener("mousemove",(e)=>{
     if(model){
         const rotationx=(e.clientX/window.innerWidth-.5)*(Math.PI*.18);
-        const rotationy=(e.clientY/window.innerHeight-.5)*(Math.PI*.18);
+        const rotationy=(e.clientY/window.innerHeight-.5)*(Math.PI*.1);
         gsap.to(model.rotation, {
-            // x: rotationy,
+            x: rotationy,
             y: rotationx,
             duration: 0.5,
             ease: "power2.out"

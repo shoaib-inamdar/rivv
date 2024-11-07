@@ -114,13 +114,7 @@ document.querySelector(".para-effect")
     clutter+=`<span>${e}</span>`;
 })
 document.querySelector(".para-effect").innerHTML=clutter;
-gsap.set(".para-effect span",{
-    opacity:.01
-})
-gsap.to(".para-effect span",{
-    opacity:1,
-    stagger:.03,
-    ease:"power4",
+var tl3=gsap.timeline({
     scrollTrigger:{
         trigger:".page2",
         scrub:2,
@@ -129,22 +123,40 @@ gsap.to(".para-effect span",{
         pin:true,
         // markers:true
     }
+});
+gsap.set(".para-effect span",{
+    opacity:.01
 })
+tl3.to(".para-effect span",{
+    opacity:1,
+    stagger:.03,
+    ease:"power4",
+},'para')
+tl3.from(".imgdiv",{
+    height:0,
+    // width:0,
+    stagger:1,
+    duration:2
+    
+},'para')
 }
 para_effect()
 
 function cursor(){
     window.addEventListener("mousemove",function(e){
-        gsap.to(".cursor",{
+        gsap.to(".innercursor,.cursor",{
             x:e.clientX,
             y:e.clientY,
-            opacity:1
-            
+            opacity:1,
+            ease:"back.out",
+            stagger:.04,
+            // duration:.2
         })
     }
     )
 }
 cursor()
+
 
 //     var increment=1.5+"rem"
 //     var logotexth1=document.querySelectorAll(".logotext>h1").forEach(function(e){

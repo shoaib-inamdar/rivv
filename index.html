@@ -12,9 +12,10 @@
 </head>
 <body>
   <div class="main w-full bg-zinc-900 text-white overflow-x-hidden">
-    <div class="cursor w-[4rem] h-[4rem] pointer-events-none fixed z-[8] rounded-full bg-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference"></div>
+    <div class="innercursor w-2 h-2 pointer-events-none fixed z-[8] rounded-full bg-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div>
+    <div class="cursor w-[4rem] h-[4rem] pointer-events-none fixed z-[8] rounded-full border-2 border-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div>
     <div class="loader hidden font-[Urbanist] flex flex-col justify-center items-center w-full h-screen fixed top-0 left-0 z-[9] bg-zinc-900">
-      <div class="logo"></div>
+      <div class="logo w-52 h-52 bg-red-500"><img class="w-full h-full object-cover" src="logo.jpg" alt=""></div>
       <div class="logotext text-center h-[1.5rem] overflow-hidden">
         <h1 class="relative top-6 ">Unveiling the New Wave of Style...</h1>
         <h1 class="relative ">Loading Vibes, Setting Trends...</h1>
@@ -70,9 +71,9 @@
           </div>
         </div>
         <div class="hero w-full h-screen relative overflow-hidden">
+          <div class="scroll absolute bottom-10 lg:left-1/2 right-10 lg:-translate-x-1/2 z-[6] text-center">scroll down slow for <br> better experience ↓</div>
           <div class="canvas w-full h-screen absolute z-[5] top-0 left-0">
             <canvas id="canvas"></canvas>  
-
           </div>
       <div class="nav w-full scale-x-0 lg:px-10 fixed top-0 left-1/2 -translate-x-1/2  z-[5]">
         <nav class="w-full mt-7 py-4 lg:px-10 flex justify-between items-center bg-[rgba(225,225,225,.2)] backdrop-blur rounded-md">
