@@ -47,7 +47,7 @@ rgbeLoader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/venice_sun
 // GLTF Loader
 const loader = new GLTFLoader()
 var model;
-var arr=['texture1.jpg','texture2.jpg'];
+var arr=['texture1.jpg','texture2.jpg','texture3.jpg','texture4.jpg'];
 
 // var i=0;
 // var no=document.querySelector(".prev")
