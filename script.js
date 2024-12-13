@@ -1,9 +1,14 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis'
+import Background from "three/src/renderers/common/Background.js";
+gsap.registerPlugin(ScrollTrigger);
 
 function lenis(){
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+        lerp: 0.05,
+        smoothWheel:true
+    });
 
 lenis.on('scroll');
 
@@ -18,8 +23,6 @@ requestAnimationFrame(raf);
 lenis()
 
 var x=window.matchMedia("(min-width:600px)")
-
-gsap.registerPlugin(ScrollTrigger);
 gsap.set(".textcontent h1",{
     scale:100
 })
@@ -49,26 +52,26 @@ tl2.to(".loader",{
 tl2.to(".loader",{
     display:"none"
 })
-tl2.from('.hero-content h1:nth-child(1)',{
-    x:-800,
+// tl2.from('.hero-content h1:nth-child(1)',{
+//     x:-800,
+//     duration:1,
+//     ease:"expo.out"
+// },"hero")
+tl2.from('.centertext h1',{ 
+    y:800,
     duration:1,
     ease:"expo.out"
 },"hero")
-tl2.from('.hero-content h1:nth-child(2)',{
-    x:800,
-    duration:1,
-    ease:"expo.out"
-},"hero")
-tl2.from('.nav',{
-    y:-100,
-    opacity:0,
-    duration:1
-},"hero")
-tl2.to('.nav',{
-    scaleX:1,
-    duration:1,
-    ease:"expo.inOut"
-})
+                                            // tl2.from('.nav',{
+                                            //     y:-100,
+                                            //     opacity:0,
+                                            //     duration:1
+                                            // },"hero")
+                                            // tl2.to('.nav',{
+                                            //     scaleX:1,
+                                            //     duration:1,
+                                            //     ease:"expo.inOut"
+                                            // })
 // tl.to('.hero-content h1:nth-child(1)',{
 //     x:800,
 //     duration:1,
@@ -152,8 +155,7 @@ function cursor(){
             stagger:.04,
             // duration:.2
         })
-    }
-    )
+    })
 }
 cursor()
 
@@ -168,3 +170,124 @@ cursor()
 //     })
 //     increment-=1.5+"rem"
 // })
+
+var tll=gsap.timeline({
+    scrollTrigger:{
+        trigger:".page3",
+        scrub:1,
+        start:"20% 20%",
+        end:"150% 60%",
+        // markers:true,
+        pin:true   
+    }
+});
+
+tll.from(".circle1,.circle2",{
+    y:200,
+    opacity:0,
+    duration:5
+})
+tll.to(".circle1",{
+    left:"50%",
+    duration:5
+},"circle")
+tll.to(".circle2",{
+    left:"50%",
+    duration:5
+},"circle")
+tll.to(".circle2 h1",{
+    display:"none",
+})
+tll.to(".circle2",{
+    scale:20,
+    duration:3
+},"yo")
+tll.to(".page3",{
+    backgroundColor:"#fff"
+})
+tll.to(".circle1,.circle2",{
+    display:"none"
+})
+tll.to(".svg,.contentmobile",{
+    opacity:1
+})
+// var tlll=gsap.timeline({
+//     scrollTrigger:{
+//         trigger:".page3",
+//         start:"50% 50%",
+//         end:"250% 50%",
+//         scrub:1
+//     }
+// })
+tll.to(".svg",{
+    maskSize:"200%",
+    // transform:"rotate(200deg)",
+    duration:8
+},'svg')
+tll.to(".svg .img",{
+    backgroundSize:"100%",
+    duration:7
+},'svg')
+tll.to(".svg2",{
+    maskSize:"200%",
+    duration:8
+},'svg2')
+tll.to(".svg2 .img2",{
+    backgroundSize:"100%",
+    duration:7
+},'svg2')
+
+// function preventScroll(event) {
+//     event.preventDefault();
+// }
+
+document.querySelector(".explore").addEventListener("click",function(){
+    // window.addEventListener('scroll', preventScroll, { passive: false });
+    
+    // window.addEventListener('wheel', preventScroll, { passive: false });
+    // window.addEventListener('touchmove', preventScroll, { passive: false });
+    gsap.to('.explore',{
+        bottom:"-2.5rem",
+        opacity:0    
+    })
+    gsap.to(".nav",{
+        y:-100
+    })
+    gsap.to(".back",{
+        bottom:"2.5rem",
+        opacity:1
+    })
+    gsap.to(".next",{
+        opacity:1,
+        right:0
+    })
+    gsap.to(".prev",{
+        opacity:1,
+        left:0
+    })
+    
+
+})
+
+document.querySelector(".back").addEventListener("click",function(){
+    gsap.to('.explore',{
+        bottom:"2.5rem",
+        opacity:1
+    })
+    gsap.to(".nav",{
+        y:0
+    })
+    gsap.to(".back",{
+        bottom:"-2.5rem",
+        opacity:0
+    })
+    gsap.to(".next",{
+        opacity:0,
+        right:"-2.5rem"
+    })
+    gsap.to(".prev",{
+        opacity:0,
+        left:"-2.5rem"
+    })
+    
+})

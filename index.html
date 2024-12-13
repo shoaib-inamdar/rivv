@@ -11,84 +11,42 @@
     </style>
 </head>
 <body>
-  <div class="main w-full bg-zinc-900 text-white overflow-x-hidden">
+  <div class="main w-full bg-black text-white overflow-x-hidden">
     <div class="innercursor w-2 h-2 pointer-events-none fixed z-[8] rounded-full bg-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div>
-    <div class="cursor w-[4rem] h-[4rem] pointer-events-none fixed z-[8] rounded-full border-2 border-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div>
-    <div class="loader hidden font-[Urbanist] flex flex-col justify-center items-center w-full h-screen fixed top-0 left-0 z-[9] bg-zinc-900">
-      <div class="logo w-52 h-52 bg-red-500"><img class="w-full h-full object-cover" src="logo.jpg" alt=""></div>
-      <div class="logotext text-center h-[1.5rem] overflow-hidden">
-        <h1 class="relative top-6 ">Unveiling the New Wave of Style...</h1>
-        <h1 class="relative ">Loading Vibes, Setting Trends...</h1>
-        <h1 class="relative ">Setting the Scene for Fresh Fashion...</h1>
-        <h1 class="relative ">Your Style, Just a Moment Away...</h1>
-        <h1 class="relative ">Get Ready to Ride the Rivv...</h1>
+    <!-- <div class="cursor w-[4rem] h-[4rem] pointer-events-none fixed z-[8] rounded-full border-2 border-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div> -->
+    <div class="loader font-[Urbanist] flex flex-col justify-center items-center w-full h-screen fixed top-0 left-0 z-[9] bg-black">
+      <div class="loader-logo w-52 h-52"><img class="w-full h-full object-cover" src="logo.jpg" alt=""></div>
+      <div class="logotext mt-5 text-center h-[1.5rem] overflow-hidden animate-pulse">
+        <h1 class="relative font-semibold ">Loading Vibes, Setting Trends...</h1>
       </div>
-      <div class="progressbar mt-4 w-60 h-1 bg-zinc-600 overflow-hidden rounded-full ">
+      <div class="progressbar mt-4 w-60 h-1 bg-zinc-600 overflow-hidden rounded-full">
         <div class="progress bg-zinc-100 w-0 h-1"></div>
       </div>
     </div>
-    <div id="page1" class="home hidden section w-full h-[200vh] relative">
-      <div style="--clip:100%" class="video z-[3] w-full h-screen absolute top-0 left-0 overflow-hidden ">
-        <video autoplay muted loop class="absolute w-auto h-auto object-fill" src="video.mp4"></video>
-      </div>
-      <div class="text w-full h-screen relative overflow-hidden">
-        <div class="textcontent md:text-1xl md:w-2 text-9xl scale-[1] absolute flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-900">
-          <div class="text1 flex ">              
-            <h1 class="sm:text-2xl text-7xl">R</h1>
-            <div class="innertext flex items-end justify-end w-0 overflow-hidden">
-              <h3 class="text-2xl underline">aw</h3>
-            </div>
-          </div>
-          <div class="text1 flex ">
-            <h1 class="sm:text-2xl text-7xl">I</h1>
-            <div class="innertext flex items-end justify-end w-0 overflow-hidden">
-              <h3 class="text-2xl underline">conic</h3>
-            </div>            <!-- <h3 class="hidden">nnovative</h3> -->
-          </div>
-          <div class="text1 flex ">
-            <h1 class="sm:text-2xl text-7xl">V</h1>
-            <div class="innertext flex items-end justify-end w-0 overflow-hidden">
-              <h3 class="text-2xl underline">ersatile</h3>
-            </div>
-          </div>
-          <div class="text1 flex ">
-            <h1 class="sm:text-2xl text-7xl">V</h1>
-            <div class="innertext flex items-end justify-end w-0 overflow-hidden">
-              <h3 class="text-2xl underline">itality</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="homepage hidden w-full">
-          <div class="homecontent relative text-[8rem] leading-tight flex flex-col justify-center items-center">
-            <div class="imgdiv sticky top-52 z-[2] w-[25vw]">
-              <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-            </div>
-            <h1>Where Style</h1>
-            <h1 class="relative z-[3]">Meets</h1>
-            <h1>the next wave</h1>
-          </div>
-        </div>
-        <div class="hero w-full h-screen relative overflow-hidden">
-          <div class="scroll absolute bottom-10 lg:left-1/2 right-10 lg:-translate-x-1/2 z-[6] text-center">scroll down slow for <br> better experience ↓</div>
+    <div class="hero w-screen h-screen relative overflow-hidden">
           <div class="canvas w-full h-screen absolute z-[5] top-0 left-0">
-            <canvas id="canvas"></canvas>  
+            <canvas id="canvas"></canvas>
           </div>
-      <div class="nav w-full scale-x-0 lg:px-10 fixed top-0 left-1/2 -translate-x-1/2  z-[5]">
-        <nav class="w-full mt-7 py-4 lg:px-10 flex justify-between items-center bg-[rgba(225,225,225,.2)] backdrop-blur rounded-md">
-          <div class="logo">Rivv</div>
+          <!-- <div class="scroll absolute bottom-10 right-[32%] lg:right-1/2 z-[6] text-center">scroll down slow for <br> better experience ↓</div> -->
+        <nav class="nav absolute w-full py-5 px-5 lg:px-5 flex justify-between items-center backdrop-blur border-b border-zinc-500">
+          <div class="logo w-10 h-10 flex items-center"><img class="w-full h-full object-cover" src="logo.jpg" alt=""><h3 class="text-4xl font-semibold font-[Urbanist] uppercase">Rivv</h3></div>
           <div class="join border-[1px] border-[#E0A96D] py-2 px-4 rounded-full">join us</div>
         </nav>
+        <!-- <div class="line w-screen h-[2px] bg-zinc-500 absolute "></div> -->
+        
+        <div class="hero-content relative w-full h-screen font-[Urbanist] flex flex-col lg:gap-10 gap-48 justify-center">
+          <div class="centertext w-full h-fit absolute flex justify-center items-center overflow-hidden"><h1 class="text-5xl lg:text-9xl font-semibold">Beyond Trends</h1></div>
+          <!-- <div class="highlight "></div> -->
+          <!-- <h1 class="pl-5 lg:text-9xl text-5xl tracking-tight font-semibold text-[#E0A96D]">Ride the Trend</h1> -->
+          <!-- <h1 class="pr-5 lg:text-9xl text-5xl tracking-tight font-semibold text-[#E0A96D] text-right z-[6] relative">Live the Rivv</h1> -->
+          <div class="prev w-16 ml-5 absolute -left-10 top-1/2 -translate-y-1/2 z-[10] border-[1px] border-white rounded-full opacity-0 overflow-hidden"><img class="bg-white w-full h-full object-cover -rotate-180" src="right-arrow.png" alt=""></div>
+          <div class="next w-16 mr-5 absolute -right-10 top-1/2 -translate-y-1/2 z-[10] border-[1px] border-white rounded-full opacity-0 overflow-hidden"><img class="bg-white w-full h-full object-cover" src="right-arrow.png" alt=""></div> 
+        <!-- <div class="lg:flex-initial hidden description absolute pb-10 lg:pb-5 pl-5 bottom-0 left-0 w-1/2 lg:w-1/3 leading-none">
+          <p>Rivv isn’t just fashion; it’s a movement for those who lead with boldness and creativity. Embrace the adventure of self-expression, and let your style be as limitless as you are</p>
+        </div> -->
       </div>
-      
-      <div class="hero-content relative w-full h-screen font-[Urbanist] flex flex-col lg:gap-10 gap-48 justify-center">
-        <h1 class="pl-5 lg:text-9xl text-5xl tracking-tight font-semibold text-[#E0A96D]">Ride the Trend</h1>
-        <h1 class="pr-5 lg:text-9xl text-5xl tracking-tight font-semibold text-[#E0A96D] text-right z-[6] relative">Live the Rivv</h1>
-        <div class="description absolute pb-10 lg:pb-5 pl-5 bottom-0 left-0 w-1/2 lg:w-1/3 leading-none">
-          <p data-speed="1">Rivv isn’t just fashion; it’s a movement for those who lead with boldness and creativity. Find pieces that inspire, empower, and elevate your wardrobe to a new level. Embrace the adventure of self-expression, and let your style be as limitless as you are</p>
-        </div>
-      </div>
+      <div class="explore absolute z-[6] cursor-pointer bottom-10 left-1/2 -translate-x-1/2 "><h1 class="cursorevent border border-white rounded-full capitalize py-2 px-5">explore designs</h1></div>
+      <div class="back absolute z-[6] cursor-pointer -bottom-10 opacity-0 left-1/2 -translate-x-1/2 "><h1 class="cursorevent border border-white rounded-full capitalize py-2 px-5">Back </h1></div>
     </div>
     <div class="marquees hidden w-full whitespace-nowrap overflow-x-auto overflow-y-hidden ">
         <h1 class="inline-block ml-[4rem] text-7xl">Express Yourself</h1>
@@ -107,21 +65,26 @@
         <h3 class="para-effect mix-blend-difference lg:text-3xl text-2xl font-[Urbanist] z-[2]">Discover the art of bold style with Rivv. Crafted for the fearless and curated for those who dare to stand out, our pieces are designed to let you express your individuality. Step into your signature style and make every look speak volumes—be unapologetically you.</h3>
       </div>
     </div>
-    <div class="page3 w-full h-screen">
-      <div class="cards w-full h-full p-10 flex justify-between">
-        <div class="card p-10 bg-zinc-600 lg:w-2/5 h-fit rounded-lg">
-          <div class="cardimg w-full bg-red-900 rounded-lg overflow-hidden">
-            <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHQlMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D" alt="">
+    <div class="page3 w-full h-screen relative overflow-hidden flex justify-center items-center">
+      <div class="circle1 absolute top-1/2 left-[30%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-black border-[1px] border-white flex justify-center items-center text-center"><h1 class="text-2xl font-semibold">Our Designs</h1></div>
+      <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl">+</h1>
+      <div class="circle2 absolute top-1/2 left-[70%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-white flex justify-center items-center text-center"><h1 class="text-2xl font-semibold text-black">You</h1></div>
+      <div class="contentmobile opacity-0 flex-col gap-5 w-full h-full lg:hidden relative">
+        <div class="img w-full flex h-full object-fill lg:hidden absolute"></div>
+        <div class="img2 w-full flex h-full object-fill lg:hidden absolute"></div>
+      </div>
+      <div class="svg w-full h-screen opacity-0 absolute">
+        <div class="img">
+          <div class="svg2 w-full h-screen absolute">
+            <div class="img2">
+              
+            </div>
           </div>
-          <div class="cardtext mt-10">
-              <h1 class="text-4xl">T-Shirt</h1>
-              <h2 class="mt-5 text-xl">₹200/-</h2>
-          </div>
-          <div class="price"></div>
         </div>
       </div>
     </div>
-  </div>
+    <div class="page4 w-full h-screen"></div>
+  </div> 
   <script type="module" src="three.js"></script>
   <script type="module" src="script.js"></script>
 </body>

@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: gendy;
     src: url(gendy.otf);
@@ -9,39 +10,84 @@
 
 .logotext h1{
     position: relative;
-    animation: loaderanimation 8s ease-in-out infinite;
+    /* animation: loaderanimation 8s cubic-bezier(.44,.99,.56,.01) infinite; */
     /* animation-delay: 1.5s; */
 }
 
+.cards{
+    perspective: 1000px;
+}
+.card{
+    transform: rotateY(60deg) skewY(-5deg)
+    /* transform: rotate3d(120deg); */
+    /* perspective: 700px; */
+}
 .progress{
     /* width: 100%; */
 }
 .marquees h1{
-    animation: marquee 3s linear infinite;
+    /* animation: marquee 3s linear infinite; */
 
+}
+.scroll{
+        animation: bounce 1s infinite;
+}
+
+.svg,.svg2{
+    mask-image: url(./star.svg);
+    mask-size: 0;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://media.istockphoto.com/id/2017396825/photo/young-guy-dancer-is-dancing-break-in-neon-lighting-male-acrobat-is-doing-trick-and-dance.jpg?s=612x612&w=0&k=20&c=lipvQXVPiXR_c_rfKGpX6m6P8zH-fxTqn7tXXt8-70Q=);
+    background-position: center;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    /* background-size: contain; */
+}
+.img2{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://media.istockphoto.com/id/915504150/photo/serious-bearded-man-sitting-on-staircase-and-think.jpg?s=612x612&w=0&k=20&c=KjENiEvJ44Shf8vmuGwLv7pNdxZTpJm-3JrR06esZtM=);
+    background-position: center;
+    background-size: 150%;
+    background-repeat: no-repeat;
 }
 @keyframes loaderanimation {
     0%{
-        top: 1.5rem;
+        top: 2rem;
     }
     20%{
-        top: 0;
+        top: -.5;
     }
     40%{
-        top: -1.5rem;
+        top: -2rem;
     }
     60%{
-        top: -3rem;
+        top: -3.5rem;
     }
     80%{
-        top: -4.5rem;
+        top: -5rem;
     }
     100%{
-        top: -6rem;
+        top: -6.5rem;
     }
     
 }
 
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8,0,1,1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0,0,0.2,1);
+    }
+}
 @keyframes marquee {
     from {
       transform: translateX(0);
@@ -50,3 +96,12 @@
       transform: translateX(calc(-100% - 10px));
     }
   }
+
+@media(max-width:426px){
+    .main{
+        /* background-color: red; */
+    }
+    .svg{
+        display: none;
+    }
+}

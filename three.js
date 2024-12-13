@@ -9,18 +9,20 @@ import { RGBShiftShader } from 'three/examples/jsm/shaders/RGBShiftShader.js'
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import gsap from 'gsap'
+import { texture } from 'three/webgpu'
+var isexplore=false
 
 //scene
 const scene = new THREE.Scene()
 var x=window.matchMedia("(min-width:600px)")
 
 //camera
-const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.1, 100)
-camera.position.z = 4
+const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 100)
+camera.position.z = 1
 if(!x.matches){
-    camera.position.z=6
+    camera.position.z=2
 }
-camera.position.y=.5
+// camera.position.y=.1
 
 // Load HDRI environment map
 const rgbeLoader = new RGBELoader()
@@ -32,25 +34,56 @@ rgbeLoader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/venice_sun
 })
 
 
+// const textureloader=new THREE.TextureLoader();
+// textureloader.load('./texture1.jpg',
+//     function(texture){
+//         const material=new THREE.MeshBasicMaterial({map:texture})
+//     },
+//     undefined,
+//     function(error){
+//         console.error('An error happened:', error)
+//     }
+// );
 // GLTF Loader
 const loader = new GLTFLoader()
-let model;
+var model;
+var arr=['texture1.jpg','texture2.jpg'];
 
+// var i=0;
+// var no=document.querySelector(".prev")
+// no.addEventListener("click",function(){
+//     console.log('ouyoyo')
+//     // i++;
+// })
 loader.load(
-    '/models/4Tshirt.glb',
+    '/models/shirt_baked.glb',
     function (gltf) {
         model = gltf.scene
-        scene.add(model)
         
         // Center and scale the model
-        const box = new THREE.Box3().setFromObject(model)
-        const center = box.getCenter(new THREE.Vector3())
-        model.position.x += (model.position.x - center.x)
+        var box = new THREE.Box3().setFromObject(model)
+        var center = box.getCenter(new THREE.Vector3())
+        // model.position.x += (model.position.x - center.x)
+        model.position.x=2
         model.position.y += (model.position.y - center.y)
         // model.position.z += (model.position.z - center.z)
         
         const scaleValue = 1
         model.scale.set(scaleValue, scaleValue, scaleValue)
+        // var val=arr[0];
+        const textureLoader = new THREE.TextureLoader();
+        const texture = textureLoader.load(`${arr[i]}`,(texture) => console.log('Texture loaded:', texture),
+        (progress) => console.log('Loading progress:', progress),
+        (error) => console.error('Error occurred:', error)); // Replace with your texture path
+        
+        // Assuming the model has mesh materials
+        model.traverse((node) => {
+            if (node.isMesh) {
+                node.material.map = texture; // Apply the texture to all mesh materials
+                node.material.needsUpdate = true;
+            }
+            });
+        scene.add(model)
     },
     function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded')
@@ -60,9 +93,13 @@ loader.load(
     }
 )
 
+
+
 window.addEventListener("mousemove",(e)=>{
-    if(model){
-        const rotationx=(e.clientX/window.innerWidth-.5)*(Math.PI*.18);
+    if(!isexplore){
+
+        if(model){
+            const rotationx=(e.clientX/window.innerWidth-.5)*(Math.PI*.18);
         const rotationy=(e.clientY/window.innerHeight-.5)*(Math.PI*.1);
         gsap.to(model.rotation, {
             x: rotationy,
@@ -71,7 +108,109 @@ window.addEventListener("mousemove",(e)=>{
             ease: "power2.out"
         });
     }
+}
 })
+// function preventScroll(event) {
+//     event.preventDefault();
+//     event.stopPropagation();
+//     return false;
+// }
+// function disableScrolling() {
+//     window.addEventListener('scroll', preventScroll, { passive: false });
+// }
+
+// // Function to enable scrolling
+// function enableScrolling() {
+//     window.removeEventListener('scroll', preventScroll);
+// }
+document.querySelector(".explore").addEventListener("click",function(){
+    // const controls = new OrbitControls( camera, renderer.domElement );
+    isexplore=true
+    if(isexplore){
+        // disableScrolling()
+        // controls.update();
+        // controls.enableZoom = false;
+        // isexplore=false
+        gsap.to(".centertext h1",{
+            y:800,
+            duration:1,
+            ease:"expo.inOut"
+        })
+        gsap.to(camera.position,{
+            x:2
+        })
+        // camera.position.x=2
+    }
+    
+})
+document.querySelector(".back").addEventListener("click",function(){
+    // const controls = new OrbitControls( camera, renderer.domElement );
+    isexplore=false
+    // enableScrolling()
+    // model.position.x += (model.position.x - center.x)
+    // model.position.y += (model.position.y - center.y)
+    // controls.enabled=false;
+    // controls.update();
+    gsap.to(".centertext h1",{
+        y:0,
+        duration:1,
+        ease:"expo.inOut"
+    })
+    gsap.to(camera.position,{
+        x:0
+    })
+})
+
+var i = 0;
+const nextButton = document.querySelector(".next");
+
+nextButton.addEventListener("click", function () {
+    
+    i = (i + 1) % arr.length;
+    console.log(`Texture index updated: ${i}`);
+
+    if (model) {
+        const textureLoader = new THREE.TextureLoader();
+        const texture = textureLoader.load(
+            `${arr[i]}`,
+            (texture) => console.log('Texture loaded:', texture),
+            (progress) => console.log('Loading progress:', progress),
+            (error) => console.error('Error occurred:', error)
+        );
+
+        
+        model.traverse((node) => {
+            if (node.isMesh) {
+                node.material.map = texture;
+                node.material.needsUpdate = true;
+            }
+        });
+    }
+});
+const prevButton = document.querySelector(".prev");
+prevButton.addEventListener("click", function () {
+    i = (i - 1 + arr.length) % arr.length; 
+    console.log(`Texture index updated: ${i}`);
+
+    if (model) {
+        const textureLoader = new THREE.TextureLoader();
+        const texture = textureLoader.load(
+            `${arr[i]}`,
+            (texture) => console.log('Texture loaded:', texture),
+            (progress) => console.log('Loading progress:', progress),
+            (error) => console.error('Error occurred:', error)
+        );
+
+        model.traverse((node) => {
+            if (node.isMesh) {
+                node.material.map = texture; 
+                node.material.needsUpdate = true;
+            }
+        });
+    }
+});
+
+
 
 window.addEventListener("resize",()=>{
     camera.aspect=window.innerWidth/window.innerHeight;
@@ -84,6 +223,7 @@ const renderer = new THREE.WebGLRenderer({
     antialias: true,
     alpha:true
 })
+
 
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.setSize(window.innerWidth, window.innerHeight)
@@ -99,15 +239,14 @@ composer.addPass(renderPass)
 const rgbShiftPass = new ShaderPass(RGBShiftShader)
 rgbShiftPass.uniforms['amount'].value = 0.0025
 composer.addPass(rgbShiftPass)
-// const controls = new OrbitControls( camera, renderer.domElement );
-// controls.update();
+
 
 
 function animate() {
     window.requestAnimationFrame(animate)
     
     if (model) {
-        // model.rotation.y += 0.005
+        model.rotation.y += 0.02
     }
     
     composer.render()
