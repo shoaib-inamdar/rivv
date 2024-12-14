@@ -47,7 +47,8 @@ rgbeLoader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/venice_sun
 // GLTF Loader
 const loader = new GLTFLoader()
 var model;
-var arr=['texture1.jpg','texture2.jpg','texture3.jpg','texture4.jpg'];
+var arr=['/textures/texture1.jpg','/textures/texture2.jpg','/textures/texture3.jpg','/textures/texture4.jpg'];
+// var arr=['texture1.jpg','texture2.jpg','texture3.jpg','texture4.jpg'];
 
 // var i=0;
 // var no=document.querySelector(".prev")
@@ -137,7 +138,9 @@ document.querySelector(".explore").addEventListener("click",function(){
             ease:"expo.inOut"
         })
         gsap.to(camera.position,{
-            x:2
+            x:2,
+            duration:1,
+            ease:"expo.inOut"
         })
         // camera.position.x=2
     }
@@ -157,7 +160,9 @@ document.querySelector(".back").addEventListener("click",function(){
         ease:"expo.inOut"
     })
     gsap.to(camera.position,{
-        x:0
+        x:0,
+        duration:1,
+        ease:"expo.inOut"
     })
 })
 
