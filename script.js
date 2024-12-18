@@ -122,7 +122,7 @@ var tl3=gsap.timeline({
         trigger:".page2",
         scrub:2,
         start:"top top",
-        end:"200% bottom",
+        end:"200% 20%",
         pin:true,
         // markers:true
     }
@@ -176,7 +176,7 @@ var tll=gsap.timeline({
         trigger:".page3",
         scrub:1,
         start:"20% 20%",
-        end:"150% 60%",
+        end:"300% 30%",
         // markers:true,
         pin:true   
     }
@@ -202,6 +202,9 @@ tll.to(".circle2",{
     scale:20,
     duration:3
 },"yo")
+tll.to(".main",{
+    backgroundColor:"#fff"
+})
 tll.to(".page3",{
     backgroundColor:"#fff"
 })
@@ -219,6 +222,29 @@ tll.to(".svg,.contentmobile",{
 //         scrub:1
 //     }
 // })
+
+tll.from("#mb1",{
+    x:1000,
+    duration:2,
+})
+tll.from("#mb1>h1",{
+    opacity:0
+})
+tll.from("#mb2",{
+    x:1000,
+    duration:2,
+})
+tll.from("#mb2>h1",{
+    opacity:0
+})
+tll.from("#mb3",{
+    x:1000,
+    duration:2,
+})
+tll.from("#mb3>h1",{
+    opacity:0
+})
+
 tll.to(".svg",{
     maskSize:"200%",
     // transform:"rotate(200deg)",
@@ -228,6 +254,9 @@ tll.to(".svg .img",{
     backgroundSize:"100%",
     duration:7
 },'svg')
+tll.to(".img .svgcontent",{
+    opacity:0
+})
 tll.to(".svg2",{
     maskSize:"200%",
     duration:8
@@ -236,6 +265,17 @@ tll.to(".svg2 .img2",{
     backgroundSize:"100%",
     duration:7
 },'svg2')
+tll.to(".img2 .svg2content",{
+    opacity:0
+})
+tll.to(".svg3",{
+    maskSize:"200%",
+    duration:8
+},'svg3')
+tll.to(".svg3 .img3",{
+    backgroundSize:"100%",
+    duration:7
+},'svg3')
 
 // function preventScroll(event) {
 //     event.preventDefault();

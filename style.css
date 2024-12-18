@@ -33,7 +33,7 @@
         animation: bounce 1s infinite;
 }
 
-.svg,.svg2{
+.svg,.svg2,.svg3{
     mask-image: url(./star.svg);
     mask-size: 0;
     mask-repeat: no-repeat;
@@ -56,6 +56,18 @@
     background-size: 150%;
     background-repeat: no-repeat;
 }
+.img3{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://media.istockphoto.com/id/2167519584/photo/attractive-young-man-in-an-elegant-shirt-in-a-t-shirt-in-trendy-striped-pants-is-posing-near.jpg?s=612x612&w=0&k=20&c=MeDP5woXtzVDOOnH4BWQe8Ak3fF5UXMCe3Qrgh4kzY0=);
+    background-position: center;
+    background-size: 150%;
+    background-repeat: no-repeat;
+}
+/* #mb1,#mb2{
+    height: 100vh;
+    width: 100%;
+} */
 @keyframes loaderanimation {
     0%{
         top: 2rem;

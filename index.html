@@ -15,7 +15,7 @@
     <div class="innercursor w-2 h-2 pointer-events-none fixed z-[8] rounded-full bg-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div>
     <!-- <div class="cursor w-[4rem] h-[4rem] pointer-events-none fixed z-[8] rounded-full border-2 border-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div> -->
     <div class="loader font-[Urbanist] flex flex-col justify-center items-center w-full h-screen fixed top-0 left-0 z-[9] bg-black">
-      <div class="loader-logo w-52 h-52"><img class="w-full h-full object-cover" src="logo.jpg" alt=""></div>
+      <div class="loader-logo w-52 h-52"><img class="w-full h-full object-cover" src="./logo.jpg" alt=""></div>
       <div class="logotext mt-5 text-center h-[1.5rem] overflow-hidden animate-pulse">
         <h1 class="relative font-semibold ">Loading Vibes, Setting Trends...</h1>
       </div>
@@ -45,7 +45,7 @@
           <p>Rivv isn’t just fashion; it’s a movement for those who lead with boldness and creativity. Embrace the adventure of self-expression, and let your style be as limitless as you are</p>
         </div> -->
       </div>
-      <div class="explore absolute z-[6] cursor-pointer bottom-10 left-1/2 -translate-x-1/2 "><h1 class="cursorevent border border-white rounded-full capitalize py-2 px-5">explore designs</h1></div>
+      <div class="explore absolute z-[6] cursor-pointer bottom-14 lg:bottom-10 left-1/2 -translate-x-1/2 "><h1 class="cursorevent border border-white rounded-full capitalize py-2 px-5">explore designs</h1></div>
       <div class="back absolute z-[6] cursor-pointer -bottom-10 opacity-0 left-1/2 -translate-x-1/2 "><h1 class="cursorevent border border-white rounded-full capitalize py-2 px-5">Back </h1></div>
     </div>
     <div class="marquees hidden w-full whitespace-nowrap overflow-x-auto overflow-y-hidden ">
@@ -69,15 +69,32 @@
       <div class="circle1 absolute top-1/2 left-[30%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-black border-[1px] border-white flex justify-center items-center text-center"><h1 class="text-2xl font-semibold">Our Designs</h1></div>
       <h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl">+</h1>
       <div class="circle2 absolute top-1/2 left-[70%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-white flex justify-center items-center text-center"><h1 class="text-2xl font-semibold text-black">You</h1></div>
-      <div class="contentmobile opacity-0 flex-col gap-5 w-full h-full lg:hidden relative">
-        <div class="img w-full flex h-full object-fill lg:hidden absolute"></div>
-        <div class="img2 w-full flex h-full object-fill lg:hidden absolute"></div>
+      <div class="contentmobile flex gap-2 opacity-0 w-full h-full lg:hidden relative">
+        <div id="mb1" class="w-full h-screen lg:hidden absolute text-center"><h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-difference z-[3] text-6xl font-semibold">Urban Streetwear</h1><img class="w-full h-full object-cover" src="https://media.istockphoto.com/id/2017396825/photo/young-guy-dancer-is-dancing-break-in-neon-lighting-male-acrobat-is-doing-trick-and-dance.jpg?s=612x612&w=0&k=20&c=lipvQXVPiXR_c_rfKGpX6m6P8zH-fxTqn7tXXt8-70Q=" alt=""></div>
+        <div id="mb2" class="w-full h-screen lg:hidden absolute text-center"><h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-difference z-[3] text-6xl font-semibold">Modern Minimalism</h1><img class="w-full h-full object-cover" src="https://media.istockphoto.com/id/915504150/photo/serious-bearded-man-sitting-on-staircase-and-think.jpg?s=612x612&w=0&k=20&c=KjENiEvJ44Shf8vmuGwLv7pNdxZTpJm-3JrR06esZtM=" alt=""></div>
+        <div id="mb3" class="w-full h-screen lg:hidden absolute text-center"><h1 class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-difference z-[3] text-6xl font-semibold">Contemporary Elegance</h1><img class="w-full h-full object-cover" src="https://media.istockphoto.com/id/2167519584/photo/attractive-young-man-in-an-elegant-shirt-in-a-t-shirt-in-trendy-striped-pants-is-posing-near.jpg?s=612x612&w=0&k=20&c=MeDP5woXtzVDOOnH4BWQe8Ak3fF5UXMCe3Qrgh4kzY0=" alt=""></div>
       </div>
-      <div class="svg w-full h-screen opacity-0 absolute">
+      <div class="svg w-full h-screen opacity-0 absolute text-center">
         <div class="img">
-          <div class="svg2 w-full h-screen absolute">
+          <div class="svgcontent flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-difference z-[3] ">
+            <h1 class="text-6xl font-semibold">Urban Streetwear</h1>
+            <p class="text-1xl">A perfect blend of streetwear fashion and energetic movement, highlighted by bold neon lighting that radiates vibrancy and youth.</p>
+          </div>
+          <div class="svg2 w-full h-screen absolute text-center">
             <div class="img2">
-              
+              <div class="svg2content flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-difference z-[3]">
+                <h1 class=" text-6xl font-semibold">Modern Minimalism</h1>
+                <p>Clean, understated charm that emphasizes simplicity and thoughtfulness, ideal for those who appreciate effortless style.</p>
+              </div>
+              <div class="svg3 w-full h-screen absolute text-center">
+                <div class="svg3content flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-difference z-[3]">
+                  <h1 class=" text-6xl font-semibold">Contemporary Elegance</h1>
+                  <p>A harmonious fusion of timeless sophistication and modern fashion trends, exuding confidence and refined taste in every detail.</p>
+                </div>
+                <div class="img3">
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
