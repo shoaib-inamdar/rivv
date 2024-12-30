@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>RIVV</title>
   <link rel="stylesheet" href="tailwind.css">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -12,8 +12,9 @@
 </head>
 <body>
   <div class="main w-full bg-black text-white overflow-x-hidden">
-    <div class="innercursor w-2 h-2 pointer-events-none fixed z-[8] rounded-full bg-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div>
-    <!-- <div class="cursor w-[4rem] h-[4rem] pointer-events-none fixed z-[8] rounded-full border-2 border-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div> -->
+    <div class="websiteprogress w-[3px] h-0 lg:w-0 lg:h-[3px] fixed z-[2] top-0 left-0 bg-white mix-blend-difference rounded-full"></div>
+    <div class="innercursor w-2 h-2 pointer-events-none fixed z-[6] rounded-full bg-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div>
+    <!-- <div class="cursor w-[15rem] h-[15rem] blur-[80px] pointer-events-none fixed z-[5] rounded-full border-2 border-white -translate-x-1/2 -translate-y-1/2 opacity-0"></div> -->
     <div class="loader font-[Urbanist] flex flex-col justify-center items-center w-full h-screen fixed top-0 left-0 z-[9] bg-black">
       <div class="loader-logo w-52 h-52"><img class="w-full h-full object-cover" src="./logo.jpg" alt=""></div>
       <div class="logotext mt-5 text-center h-[1.5rem] overflow-hidden animate-pulse">
@@ -24,7 +25,7 @@
       </div>
     </div>
     <div class="hero w-screen h-screen relative overflow-hidden">
-          <div class="canvas w-full h-screen absolute z-[5] top-0 left-0">
+          <div class="canvas w-full h-screen absolute z-[2] top-0 left-0">
             <canvas id="canvas"></canvas>
           </div>
           <!-- <div class="scroll absolute bottom-10 right-[32%] lg:right-1/2 z-[6] text-center">scroll down slow for <br> better experience ↓</div> -->
@@ -45,17 +46,22 @@
           <p>Rivv isn’t just fashion; it’s a movement for those who lead with boldness and creativity. Embrace the adventure of self-expression, and let your style be as limitless as you are</p>
         </div> -->
       </div>
-      <div class="explore absolute z-[6] cursor-pointer bottom-14 lg:bottom-10 left-1/2 -translate-x-1/2 "><h1 class="cursorevent border border-white rounded-full capitalize py-2 px-5">explore designs</h1></div>
-      <div class="back absolute z-[6] cursor-pointer -bottom-10 opacity-0 left-1/2 -translate-x-1/2 "><h1 class="cursorevent border border-white rounded-full capitalize py-2 px-5">Back </h1></div>
+      <div class="explore cursoreffect absolute z-[4] cursor-pointer bottom-14 lg:bottom-10 left-1/2 -translate-x-1/2 "><h1 class="cursorevent border border-white rounded-full capitalize py-2 px-5">explore designs</h1></div>
+      <div class="back absolute z-[4] cursor-pointer -bottom-10 opacity-0 left-1/2 -translate-x-1/2 "><h1 class="cursorevent border border-white rounded-full capitalize py-2 px-5">Back </h1></div>
     </div>
-    <div class="marquees hidden w-full whitespace-nowrap overflow-x-auto overflow-y-hidden ">
-        <h1 class="inline-block ml-[4rem] text-7xl">Express Yourself</h1>
-        <h1 class="inline-block ml-[4rem] text-7xl">Stand Out</h1>
-        <h1 class="inline-block ml-[4rem] text-7xl">Effortlessly Bold</h1>
-        <h1 class="inline-block ml-[4rem] text-7xl">Feel the Flow</h1>
-        <h1 class="inline-block ml-[4rem] text-7xl">Live the Rivv</h1>
-        <h1 class="inline-block ml-[4rem] text-7xl">Own the Moment</h1>
+    <div class="marquee w-full relative my-20">
+      <div class="marquee-elem whitespace-nowrap overflow-x-auto pointer-events-none ">
+        <h1 class="inline-block uppercase text-7xl ml-[16px] font-normal text-transparent stroke"><span class="font-normal italic ">Iconic</span> - Revolution - Confident -</h1>
+        <h1 class="inline-block uppercase text-7xl ml-[16px] font-normal text-transparent stroke"><span class="font-normal italic ">Iconic</span> - Revolution - Confident -</h1>
+      </div>
     </div>
+    <div class="question1 flex-col w-[70vw] lg:pl-20 pl-5">
+      <div class="textelem overflow-hidden">
+        <h1 class="lg:text-[7vw] text-6xl w-full font-[Urbanist] font-bold">&#9675; ABOUT RIVV ?</h1>
+      </div>
+      <div class="underline bg-white w-[60vw] h-[2px] mt-5"></div>
+    </div>
+    
     <div id="page2" class="page2 w-full h-screen flex justify-center items-center">
       <div class="page2-content relative w-[40rem] flex justify-center items-center text-center p-24 lg:p-10">
         <div  class="imgdiv absolute scale-[1.3] top-10 -left-10 lg:-top-10 lg:-left-52 w-[10rem]"><img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""></div>
@@ -64,6 +70,12 @@
         <div class="imgdiv absolute scale-[1.3] lg:scale-[1] -bottom-10 -right-2 lg:-bottom-20 lg:-right-28 w-[10rem]"><img class="w-full h-full object-cover" src="https://images.pexels.com/photos/2077326/pexels-photo-2077326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=""></div>
         <h3 class="para-effect mix-blend-difference lg:text-3xl text-2xl font-[Urbanist] z-[2]">Discover the art of bold style with Rivv. Crafted for the fearless and curated for those who dare to stand out, our pieces are designed to let you express your individuality. Step into your signature style and make every look speak volumes—be unapologetically you.</h3>
       </div>
+    </div>
+    <div class="question2 flex-col w-full pl-[5rem] lg:pl-[25rem]  ">
+      <div class="textelem overflow-hidden text-left">
+        <h1 class="lg:text-[7vw] text-6xl w-full font-[Urbanist] font-bold ">&#9675;  WHY US ?</h1>
+      </div>
+      <div class="underline bg-white  h-[2px] mt-5 w-0"></div>
     </div>
     <div class="page3 w-full h-screen relative overflow-hidden flex justify-center items-center">
       <div class="circle1 absolute top-1/2 left-[30%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-black border-[1px] border-white flex justify-center items-center text-center"><h1 class="text-2xl font-semibold">Our Designs</h1></div>
@@ -92,7 +104,7 @@
                   <p>A harmonious fusion of timeless sophistication and modern fashion trends, exuding confidence and refined taste in every detail.</p>
                 </div>
                 <div class="img3">
-
+                  
                 </div>
               </div>
             </div>
@@ -100,8 +112,94 @@
         </div>
       </div>
     </div>
-    <div class="page4 w-full h-screen"></div>
-  </div> 
+    <div class="marquee w-full relative my-20">
+      <div class="marquee-elem whitespace-nowrap overflow-x-auto pointer-events-none ">
+        <h1 class="inline-block uppercase text-7xl ml-[16px] font-normal text-transparent stroke"><span class="font-normal italic ">Elevate</span> - Fearless - Authentic -</h1>
+        <h1 class="inline-block uppercase text-7xl ml-[16px] font-normal text-transparent stroke"><span class="font-normal italic ">Elevate</span> - Fearless - Authentic -</h1>
+      </div>
+    </div>
+    <div class="question3 flex-col w-[70vw] lg:pl-20 pl-5 mb-10">
+      <div class="textelem overflow-hidden">
+        <h1 class="lg:text-[7vw] text-6xl w-full font-[Urbanist] font-bold">&#9675; OUR DESIGNS</h1>
+      </div>
+      <div class="underline bg-white w-[60vw] h-[2px] mt-5"></div>
+    </div>
+    <div class="page4 w-full flex flex-wrap gap-5 items-start justify-start lg:pt-[3vw] lg:pl-[4vw] relative bg-black">
+      <div class="card cursoreffect lg:w-72 h-full relative">
+        <div class="cardhead text-6xl my-10 ml-5 lg:hidden">01</div>
+        <div class="cardhead absolute -translate-x-[3rem] z-[2] text-2xl ml-4">01</div>
+        <div class="cardimg lg:w-72 h-full relative">
+          <img id="img1" class=" absolute w-full h-full object-cover" src="design1.jpg" alt="">
+          <img class=" w-full h-full object-cover" src="t-shirt1.jpg" alt="">
+        </div>
+        <div class="line1 w-full h-[2px] mt-5 bg-white"></div>
+        <div id="card1" class="cardinfo w-full h-full mt-5">
+          <div class="textelem overflow-hidden">
+            <h1>Minimalistic floral design, bold</h1> 
+          </div>
+          <div class="textelem overflow-hidden">
+            <h1>monochrome tones, and modern Rivv</h1> 
+          </div>
+          <div class="textelem overflow-hidden">
+            <h1>branding.</h1>
+          </div>
+        </div>
+      </div>
+      
+      <div class="texteffect text-white relative w-[25rem] h-[33rem] border-[1px] border-white p-5 ml-12">
+        <div class="textelem overflow-hidden">
+          <h1 class="h-fit text-5xl tracking-wide leading-tight">Unleashing </h1>
+        </div>
+        <div class="textelem overflow-hidden">
+          <h1 class="h-fit text-5xl tracking-wide leading-tight">Individuality, </h1>
+        </div>
+        <div class="textelem overflow-hidden">
+          <h1 class="h-fit text-5xl tracking-wide leading-tight">One Outfit at a </h1>
+        </div>
+        <div class="textelem overflow-hidden">
+          <h1 class="h-fit text-5xl tracking-wide leading-tight">Time</h1>
+        </div>
+        <div class="rivvsvg w-52 absolute bottom-10 left-1/2 -translate-x-1/2">
+          <img class="w-full h-full object-cover" src="circularrivv.svg" alt="">
+        </div>
+      </div>
+      <div class="circle lg:ml-5 lg:mr-10 lg:mt-20 lg:w-[23vw] lg:h-[23vw] h-full w-full mx-5 border-[2px] border-white flex justify-center items-center rounded-full mix-blend-difference rotate-45">
+        <svg class="button__arrow h-[30%]" viewBox="0 0 91 118" fill="none">
+          <path
+          d="M15.2307 57.4152L15.9378 56.708L15.2307 56.0009L14.5236 56.708L15.2307 57.4152ZM34.9813 77.1658L34.2742 77.8729L35.9813 79.58L35.9813 77.1658L34.9813 77.1658ZM0.151478 72.4944L-0.555622 71.7873L-1.26273 72.4944L-0.555622 73.2015L0.151478 72.4944ZM45.29 117.633L44.5828 118.34L45.29 119.047L45.9971 118.34L45.29 117.633ZM60.3692 102.554L61.0763 103.261L61.7839 102.553L61.0758 101.846L60.3692 102.554ZM60.3685 102.553L59.6614 101.846L58.9538 102.553L59.6619 103.261L60.3685 102.553ZM90.427 72.4944L91.1341 73.2015L91.8412 72.4944L91.1341 71.7873L90.427 72.4944ZM75.3478 57.4152L76.0549 56.7081L75.3478 56.001L74.6407 56.7081L75.3478 57.4152ZM56.3065 76.4565L55.3065 76.4565L55.3065 78.8707L57.0136 77.1636L56.3065 76.4565ZM56.3065 0.120074L57.3065 0.120074L57.3065 -0.879926L56.3065 -0.879926L56.3065 0.120074ZM34.9813 0.120076L34.9813 -0.879924L33.9813 -0.879924L33.9813 0.120076L34.9813 0.120076ZM14.5236 58.1223L34.2742 77.8729L35.6884 76.4587L15.9378 56.708L14.5236 58.1223ZM0.858585 73.2015L15.9378 58.1223L14.5236 56.708L-0.555622 71.7873L0.858585 73.2015ZM45.9971 116.926L0.858585 71.7873L-0.555622 73.2015L44.5828 118.34L45.9971 116.926ZM59.662 101.846L44.5828 116.926L45.9971 118.34L61.0763 103.261L59.662 101.846ZM59.6619 103.261L59.6625 103.261L61.0758 101.846L61.0751 101.845L59.6619 103.261ZM61.0756 103.26L91.1341 73.2015L89.7199 71.7873L59.6614 101.846L61.0756 103.26ZM91.1341 71.7873L76.0549 56.7081L74.6407 58.1223L89.7199 73.2015L91.1341 71.7873ZM74.6407 56.7081L55.5994 75.7494L57.0136 77.1636L76.0549 58.1223L74.6407 56.7081ZM57.3065 76.4565L57.3065 0.120074L55.3065 0.120074L55.3065 76.4565L57.3065 76.4565ZM56.3065 -0.879926L34.9813 -0.879924L34.9813 1.12008L56.3065 1.12007L56.3065 -0.879926ZM33.9813 0.120076L33.9813 77.1658L35.9813 77.1658L35.9813 0.120076L33.9813 0.120076Z"
+          fill="currentColor"></path>
+        </svg>
+      </div>
+      <div class="circle lg:ml-10 lg:mr-10 lg:mt-20 lg:w-[23vw] lg:h-[23vw] h-full w-full mx-5 border-[2px] border-white flex justify-center items-center rounded-full -rotate-45 mix-blend-difference">
+        <svg class="button__arrow h-[30%]" viewBox="0 0 91 118" fill="none">
+          <path
+          d="M15.2307 57.4152L15.9378 56.708L15.2307 56.0009L14.5236 56.708L15.2307 57.4152ZM34.9813 77.1658L34.2742 77.8729L35.9813 79.58L35.9813 77.1658L34.9813 77.1658ZM0.151478 72.4944L-0.555622 71.7873L-1.26273 72.4944L-0.555622 73.2015L0.151478 72.4944ZM45.29 117.633L44.5828 118.34L45.29 119.047L45.9971 118.34L45.29 117.633ZM60.3692 102.554L61.0763 103.261L61.7839 102.553L61.0758 101.846L60.3692 102.554ZM60.3685 102.553L59.6614 101.846L58.9538 102.553L59.6619 103.261L60.3685 102.553ZM90.427 72.4944L91.1341 73.2015L91.8412 72.4944L91.1341 71.7873L90.427 72.4944ZM75.3478 57.4152L76.0549 56.7081L75.3478 56.001L74.6407 56.7081L75.3478 57.4152ZM56.3065 76.4565L55.3065 76.4565L55.3065 78.8707L57.0136 77.1636L56.3065 76.4565ZM56.3065 0.120074L57.3065 0.120074L57.3065 -0.879926L56.3065 -0.879926L56.3065 0.120074ZM34.9813 0.120076L34.9813 -0.879924L33.9813 -0.879924L33.9813 0.120076L34.9813 0.120076ZM14.5236 58.1223L34.2742 77.8729L35.6884 76.4587L15.9378 56.708L14.5236 58.1223ZM0.858585 73.2015L15.9378 58.1223L14.5236 56.708L-0.555622 71.7873L0.858585 73.2015ZM45.9971 116.926L0.858585 71.7873L-0.555622 73.2015L44.5828 118.34L45.9971 116.926ZM59.662 101.846L44.5828 116.926L45.9971 118.34L61.0763 103.261L59.662 101.846ZM59.6619 103.261L59.6625 103.261L61.0758 101.846L61.0751 101.845L59.6619 103.261ZM61.0756 103.26L91.1341 73.2015L89.7199 71.7873L59.6614 101.846L61.0756 103.26ZM91.1341 71.7873L76.0549 56.7081L74.6407 58.1223L89.7199 73.2015L91.1341 71.7873ZM74.6407 56.7081L55.5994 75.7494L57.0136 77.1636L76.0549 58.1223L74.6407 56.7081ZM57.3065 76.4565L57.3065 0.120074L55.3065 0.120074L55.3065 76.4565L57.3065 76.4565ZM56.3065 -0.879926L34.9813 -0.879924L34.9813 1.12008L56.3065 1.12007L56.3065 -0.879926ZM33.9813 0.120076L33.9813 77.1658L35.9813 77.1658L35.9813 0.120076L33.9813 0.120076Z"
+          fill="currentColor"></path>
+        </svg>
+      </div>
+      <div class="card cursoreffect lg:w-72 lg:mt-10 h-full relative ">
+        <div class="cardhead text-6xl my-10 ml-5 lg:hidden">02</div>
+        <div class="cardhead absolute -translate-x-[3rem] z-[2] text-2xl ml-4">02</div>
+        <div class="cardimg lg:w-72 h-full relative">
+          <img id="img2" class=" absolute w-full h-full object-cover" src="design2.jpg" alt="">
+          <img class=" w-full h-full object-cover" src="t-shirt2.jpg" alt="">
+        </div>
+        <div class="line2 w-full h-[2px] mt-5 bg-white"></div>
+      <div id="card2" class="cardinfo w-full h-full mt-5">
+        <div class="textelem overflow-hidden">
+          <h1>Bold animal artwork, dynamic</h1> 
+        </div>
+        <div class="textelem overflow-hidden">
+          <h1>brushstrokes, fierce aesthetic, and Rivv</h1> 
+        </div>
+        <div class="textelem overflow-hidden">
+          <h1>identity.</h1>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="page5 w-full h-screen"></div>
+  </div>
   <script type="module" src="three.js"></script>
   <script type="module" src="script.js"></script>
 </body>

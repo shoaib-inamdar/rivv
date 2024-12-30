@@ -46,7 +46,9 @@ rgbeLoader.load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/venice_sun
 // );
 // GLTF Loader
 const loader = new GLTFLoader()
+const loader1 = new GLTFLoader()
 var model;
+var model1;
 var arr=['/textures/texture1.jpg','/textures/texture2.jpg','/textures/texture3.jpg','/textures/texture4.jpg'];
 // var arr=['texture1.jpg','texture2.jpg','texture3.jpg','texture4.jpg'];
 
@@ -93,6 +95,46 @@ loader.load(
         console.error('An error happened:', error)
     }
 )
+// loader1.load(
+//     '/models/logo.glb',
+//     function (gltf) {
+//         model1 = gltf.scene
+        
+//         // Center and scale the model
+//         var box = new THREE.Box3().setFromObject(model1)
+//         var center = box.getCenter(new THREE.Vector3())
+//         model1.position.x += (model1.position.x - center.x)+.3
+//         // model1.position.x=2
+//         model1.position.y += (model1.position.y - center.y)
+//         // model.position.z += (model.position.z - center.z)
+//         model1.rotation.x=Math.PI
+//         const scaleValue =.08
+//         if(!x.matches){
+//             model1.position.z=.1
+//         }
+//         model1.scale.set(scaleValue, scaleValue, scaleValue)
+//         // var val=arr[0];
+//         // const textureLoader = new THREE.TextureLoader();
+//         // const texture = textureLoader.load(`${arr[i]}`,(texture) => console.log('Texture loaded:', texture),
+//         // (progress) => console.log('Loading progress:', progress),
+//         // (error) => console.error('Error occurred:', error)); // Replace with your texture path
+        
+//         // Assuming the model has mesh materials
+//         // model.traverse((node) => {
+//         //     if (node.isMesh) {
+//         //         node.material.map = texture; // Apply the texture to all mesh materials
+//         //         node.material.needsUpdate = true;
+//         //     }
+//         //     });
+//         scene.add(model1)
+//     },
+//     function (xhr) {
+//         console.log((xhr.loaded / xhr.total * 100) + '% loaded')
+//     },
+//     function (error) {
+//         console.error('An error happened:', error)
+//     }
+// )
 
 
 
@@ -182,8 +224,6 @@ nextButton.addEventListener("click", function () {
             (progress) => console.log('Loading progress:', progress),
             (error) => console.error('Error occurred:', error)
         );
-
-        
         model.traverse((node) => {
             if (node.isMesh) {
                 node.material.map = texture;

@@ -17,6 +17,7 @@
   "dependencies": {
     "gsap": "^3.12.5",
     "lenis": "^1.1.14",
+    "sheryjs": "^1.0.0-beta.0.1.8",
     "three": "^0.170.0"
   }
 }

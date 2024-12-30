@@ -1,7 +1,9 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from 'lenis'
-import Background from "three/src/renderers/common/Background.js";
+// import Background from "three/src/renderers/common/Background.js";
+// import Shery from "sheryjs";
+// Shery.mouseFollower()
 gsap.registerPlugin(ScrollTrigger);
 
 function lenis(){
@@ -171,111 +173,144 @@ cursor()
 //     increment-=1.5+"rem"
 // })
 
-var tll=gsap.timeline({
+function page3(){
+    var tll=gsap.timeline({
+        scrollTrigger:{
+            trigger:".page3",
+            scrub:1,
+            start:"20% 20%",
+            end:"300% 30%",
+            // markers:true,
+            pin:true   
+        }
+    });
+    
+    tll.from(".circle1,.circle2",{
+        y:200,
+        opacity:0,
+        duration:5
+    })
+    tll.to(".circle1",{
+        left:"50%",
+        duration:5
+    },"circle")
+    tll.to(".circle2",{
+        left:"50%",
+        duration:5
+    },"circle")
+    tll.to(".circle2 h1",{
+        display:"none",
+    })
+    tll.to(".circle2",{
+        scale:20,
+        duration:3
+    },"yo")
+    
+    tll.to(".page3",{
+        backgroundColor:"#fff"
+    })
+    tll.to(".circle1,.circle2",{
+        display:"none"
+    })
+    tll.to(".svg,.contentmobile",{
+        opacity:1
+    })
+    // var tlll=gsap.timeline({
+    //     scrollTrigger:{
+    //         trigger:".page3",
+    //         start:"50% 50%",
+    //         end:"250% 50%",
+    //         scrub:1
+    //     }
+    // })
+    
+    tll.from("#mb1",{
+        x:1000,
+        duration:2,
+    })
+    tll.from("#mb1>h1",{
+        opacity:0
+    })
+    tll.from("#mb2",{
+        x:1000,
+        duration:2,
+    })
+    tll.from("#mb2>h1",{
+        opacity:0
+    })
+    tll.from("#mb3",{
+        x:1000,
+        duration:2,
+    })
+    tll.from("#mb3>h1",{
+        opacity:0
+    })
+    
+    tll.to(".svg",{
+        maskSize:"200%",
+        // transform:"rotate(200deg)",
+        duration:8
+    },'svg')
+    tll.to(".svg .img",{
+        backgroundSize:"100%",
+        duration:7
+    },'svg')
+    tll.to(".img .svgcontent",{
+        opacity:0
+    })
+    tll.to(".svg2",{
+        maskSize:"200%",
+        duration:8
+    },'svg2')
+    tll.to(".svg2 .img2",{
+        backgroundSize:"100%",
+        duration:7
+    },'svg2')
+    tll.to(".img2 .svg2content",{
+        opacity:0
+    })
+    tll.to(".svg3",{
+        maskSize:"200%",
+        duration:8
+    },'svg3')
+    tll.to(".svg3 .img3",{
+        backgroundSize:"100%",
+        duration:7
+    },'svg3')
+}
+page3()
+
+if(x.matches){
+
+    gsap.to(".websiteprogress",{
+        width:"100%",
+    // ease:"power1",
     scrollTrigger:{
-        trigger:".page3",
-        scrub:1,
-        start:"20% 20%",
-        end:"300% 30%",
+        scroller:"body",
+        trigger:".main",
+        start:"top top",
+        end:"bottom bottom",
         // markers:true,
-        pin:true   
+        scrub:1
     }
-});
-
-tll.from(".circle1,.circle2",{
-    y:200,
-    opacity:0,
-    duration:5
 })
-tll.to(".circle1",{
-    left:"50%",
-    duration:5
-},"circle")
-tll.to(".circle2",{
-    left:"50%",
-    duration:5
-},"circle")
-tll.to(".circle2 h1",{
-    display:"none",
-})
-tll.to(".circle2",{
-    scale:20,
-    duration:3
-},"yo")
-tll.to(".main",{
-    backgroundColor:"#fff"
-})
-tll.to(".page3",{
-    backgroundColor:"#fff"
-})
-tll.to(".circle1,.circle2",{
-    display:"none"
-})
-tll.to(".svg,.contentmobile",{
-    opacity:1
-})
-// var tlll=gsap.timeline({
-//     scrollTrigger:{
-//         trigger:".page3",
-//         start:"50% 50%",
-//         end:"250% 50%",
-//         scrub:1
-//     }
-// })
-
-tll.from("#mb1",{
-    x:1000,
-    duration:2,
-})
-tll.from("#mb1>h1",{
-    opacity:0
-})
-tll.from("#mb2",{
-    x:1000,
-    duration:2,
-})
-tll.from("#mb2>h1",{
-    opacity:0
-})
-tll.from("#mb3",{
-    x:1000,
-    duration:2,
-})
-tll.from("#mb3>h1",{
-    opacity:0
-})
-
-tll.to(".svg",{
-    maskSize:"200%",
-    // transform:"rotate(200deg)",
-    duration:8
-},'svg')
-tll.to(".svg .img",{
-    backgroundSize:"100%",
-    duration:7
-},'svg')
-tll.to(".img .svgcontent",{
-    opacity:0
-})
-tll.to(".svg2",{
-    maskSize:"200%",
-    duration:8
-},'svg2')
-tll.to(".svg2 .img2",{
-    backgroundSize:"100%",
-    duration:7
-},'svg2')
-tll.to(".img2 .svg2content",{
-    opacity:0
-})
-tll.to(".svg3",{
-    maskSize:"200%",
-    duration:8
-},'svg3')
-tll.to(".svg3 .img3",{
-    backgroundSize:"100%",
-    duration:7
-},'svg3')
+}
+if(!x.matches){
+    
+    gsap.to(".websiteprogress",{
+        height:"100%",
+        // ease:"power1",
+        scrollTrigger:{
+            scroller:"body",
+            trigger:".main",
+            start:"top top",
+            end:"bottom bottom",
+            // markers:true,
+            scrub:1
+        }
+    })
+    
+}
 
 // function preventScroll(event) {
 //     event.preventDefault();
@@ -331,3 +366,220 @@ document.querySelector(".back").addEventListener("click",function(){
     })
     
 })
+
+// document.querySelectorAll(".cursoreffect").addEventListener("mouseenter",function(e){
+//     gsap.to(".innercursor",{
+//         scale:7
+//     })
+// })
+// document.querySelectorAll(".cursoreffect").addEventListener("mouseleave",function(){
+//     gsap.to(".innercursor",{
+//         scale:1
+//     })
+// })
+
+document.querySelectorAll(".cursoreffect").forEach(function(e){
+    e.addEventListener("mouseenter",function(elem){
+        gsap.to(".innercursor",{
+            scale:7
+        })
+    })
+})
+document.querySelectorAll(".cursoreffect").forEach(function(e){
+    e.addEventListener("mouseleave",function(elem){
+        gsap.to(".innercursor",{
+            scale:1
+        })
+    })
+})
+
+gsap.from(".line1",{
+    width:"0%",
+    ease:"expo.inOut",
+    // opacity:0,
+    scrollTrigger:{
+        trigger:".page4",
+        scroller:"body",
+        start:"5% 15%",
+        end:"5% 25%",
+        scrub:2,
+        // markers:true
+    }
+})
+gsap.from(".line2",{
+    width:"0%",
+    ease:"expo.inOut",
+    scrollTrigger:{
+        trigger:".page4",
+        scroller:"body",
+        start:"50% top",
+        end:"50% top",
+        scrub:2
+        // markers:true
+    }
+})
+if(!x.matches){
+    gsap.to("#img1",{
+        opacity:0,
+        scrollTrigger:{
+            scroll:"body",
+            trigger:".page4",
+            start:"top 20%",
+            end:"top 20%",
+            scrub:1,
+            // markers:true
+        }
+    })
+    gsap.to("#img2",{
+        opacity:0,
+        scrollTrigger:{
+            scroll:"body",
+            trigger:".page4",
+            start:"40% top",
+            end:"40% top",
+            scrub:1,
+            // markers:true
+        }
+    })
+}
+
+gsap.from('.page4 .texteffect h1', {
+    y: 120,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.page4',
+        scroller: 'body',
+        start: 'top 40%',
+        end: 'top 50%',
+        scrub: 2,
+        // markers:true
+    }
+})
+gsap.from('#card1 .textelem h1', {
+    y: 120,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.page4',
+        scroller: 'body',
+        start: 'top 10%',
+        end: 'top 20%',
+        scrub: 2,
+        // markers:true
+    }
+})
+gsap.from('#card2 .textelem h1', {
+    y: 120,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.page4',
+        scroller: 'body',
+        start: '57% 10%',
+        end: '57% 20%',
+        scrub: 2,
+        // markers:true
+    }
+})
+gsap.from('.question1 .textelem h1', {
+    y: 120,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.question1',
+        scroller: 'body',
+        start: 'top 50%',
+        end: 'top 50%',
+        scrub: 2,
+        // markers:true
+    }
+})
+gsap.from(".question1 .underline",{
+    width:"0%",
+    ease:"expo.inOut",
+    // opacity:0,
+    scrollTrigger:{
+        trigger:".question1",
+        scroller:"body",
+        start:"top 55%",
+        end:"top 55%",
+        scrub:2,
+        // markers:true
+    }
+})
+gsap.from('.question2 .textelem h1', {
+    y: 120,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.question2',
+        scroller: 'body',
+        start: 'top 50%',
+        end: 'top 50%',
+        scrub: 2,
+        // markers:true
+    }
+})
+gsap.to(".question2 .underline",{
+    width:"100%",
+    ease:"expo.inOut",
+    // opacity:0,
+    scrollTrigger:{
+        trigger:".question2",
+        scroller:"body",
+        start:"top 55%",
+        end:"top 55%",
+        scrub:2,
+        // markers:true
+    }
+})
+gsap.from('.question3 .textelem h1', {
+    y: 120,
+    stagger: 0.2,
+    duration: 1,
+    scrollTrigger: {
+        trigger: '.question3',
+        scroller: 'body',
+        start: 'top 50%',
+        end: 'top 50%',
+        scrub: 2,
+        // markers:true
+    }
+})
+gsap.from(".question3 .underline",{
+    width:"0%",
+    ease:"expo.inOut",
+    // opacity:0,
+    scrollTrigger:{
+        trigger:".question3",
+        scroller:"body",
+        start:"top 55%",
+        end:"top 55%",
+        scrub:2,
+        // markers:true
+    }
+})
+// gsap.to(".circle",{
+//     rotate:-90,
+//     scrollTrigger:{
+//         trigger:".page4",
+//         scroller:"body",
+//         start:"top 20%",
+//         end:"bottom 60%",
+//         scrub:1,
+//         markers:true
+//     }
+// })
+// Shery.imageEffect(".cardimg",{
+//     style:2,
+//     debug:true
+// })
+// document.querySelector(".card").addEventListener("mousemove",function(e){
+//     gsap.to(".incircle",{
+//         left:e.clientX,
+//         top:e.clientY,
+//         scale:2
+//     })
+// }
+// )
