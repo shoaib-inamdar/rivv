@@ -381,7 +381,7 @@ document.querySelector(".back").addEventListener("click",function(){
 document.querySelectorAll(".cursoreffect").forEach(function(e){
     e.addEventListener("mouseenter",function(elem){
         gsap.to(".innercursor",{
-            scale:7
+            scale:5
         })
     })
 })

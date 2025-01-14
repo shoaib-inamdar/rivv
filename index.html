@@ -6,14 +6,15 @@
   <title>RIVV</title>
   <link rel="stylesheet" href="tailwind.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo.jpg">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
 </head>
 <body>
-  <div class="main w-full bg-black text-white overflow-x-hidden">
+  <div class="main w-full bg-black text-white ">
     <div class="websiteprogress w-[3px] h-0 lg:w-0 lg:h-[3px] fixed z-[2] top-0 left-0 bg-white mix-blend-difference rounded-full"></div>
-    <div class="innercursor w-2 h-2 pointer-events-none fixed z-[6] rounded-full bg-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div>
+    <div class="innercursor lg:flex hidden w-4 h-4 pointer-events-none fixed z-[6] rounded-full bg-white -translate-x-1/2 -translate-y-1/2 opacity-0 mix-blend-difference "></div>
     <!-- <div class="cursor w-[15rem] h-[15rem] blur-[80px] pointer-events-none fixed z-[5] rounded-full border-2 border-white -translate-x-1/2 -translate-y-1/2 opacity-0"></div> -->
     <div class="loader font-[Urbanist] flex flex-col justify-center items-center w-full h-screen fixed top-0 left-0 z-[9] bg-black">
       <div class="loader-logo w-52 h-52"><img class="w-full h-full object-cover" src="./logo.jpg" alt=""></div>
@@ -71,7 +72,7 @@
         <h3 class="para-effect mix-blend-difference lg:text-3xl text-2xl font-[Urbanist] z-[2]">Discover the art of bold style with Rivv. Crafted for the fearless and curated for those who dare to stand out, our pieces are designed to let you express your individuality. Step into your signature style and make every look speak volumes—be unapologetically you.</h3>
       </div>
     </div>
-    <div class="question2 flex-col w-full pl-[5rem] lg:pl-[25rem]  ">
+    <div class="question2 flex-col w-full pl-[5rem] lg:pl-[25rem] mt-32  ">
       <div class="textelem overflow-hidden text-left">
         <h1 class="lg:text-[7vw] text-6xl w-full font-[Urbanist] font-bold ">&#9675;  WHY US ?</h1>
       </div>
@@ -135,10 +136,10 @@
         <div class="line1 w-full h-[2px] mt-5 bg-white"></div>
         <div id="card1" class="cardinfo w-full h-full mt-5">
           <div class="textelem overflow-hidden">
-            <h1>Minimalistic floral design, bold</h1> 
+            <h1>Minimalistic floral design, bold</h1>
           </div>
           <div class="textelem overflow-hidden">
-            <h1>monochrome tones, and modern Rivv</h1> 
+            <h1>monochrome tones, and modern Rivv</h1>
           </div>
           <div class="textelem overflow-hidden">
             <h1>branding.</h1>
@@ -187,10 +188,10 @@
         <div class="line2 w-full h-[2px] mt-5 bg-white"></div>
       <div id="card2" class="cardinfo w-full h-full mt-5">
         <div class="textelem overflow-hidden">
-          <h1>Bold animal artwork, dynamic</h1> 
+          <h1>Bold animal artwork, dynamic</h1>
         </div>
         <div class="textelem overflow-hidden">
-          <h1>brushstrokes, fierce aesthetic, and Rivv</h1> 
+          <h1>brushstrokes, fierce aesthetic, and Rivv</h1>
         </div>
         <div class="textelem overflow-hidden">
           <h1>identity.</h1>
@@ -198,7 +199,36 @@
       </div>
     </div>
     </div>
-    <div class="page5 w-full h-screen"></div>
+    <div class="footer w-full mt-32">
+      <div class="footer-top w-full mb-10 px-5 flex justify-between items-center gap-10">
+        <h1 class="lg:text-[20rem] text-9xl font-bold">RIVV</h1>
+        <div class="foot-right  w-full h-full flex flex-col gap-3 justify-between items-center mb-5">
+          <h1 class="cursoreffect cursor-pointer lg:text-[1.2rem] leading-none w-full lg:text-right text-center">+91293844774</h1>
+          <h1 class="cursoreffect cursor-pointer lg:text-[1.2rem] leading-none w-full lg:text-right text-center">abcdefghijklmn@gmail.com</h1>
+          <h1 class="cursoreffect cursor-pointer lg:text-[1.2rem] leading-none w-full lg:text-right text-center">234,any town ,any conuntry, 499330</h1>
+        </div>
+      </div>
+      <div class="footer-bottom w-full bg-black sticky bottom-0 lg:p-10 p-5 flex justify-between items-center border-white border-t-[2px]">
+        <div class="terms flex justify-between items-center gap-3">
+          <h1 class="border-b-[3px] leading-8 border-white">Privacy Policy</h1>
+          <h1 class="border-b-[3px] leading-8 border-white">Terms of Use</h1>
+          <h1 class="border-b-[3px] leading-8 border-white">Trust</h1>
+        </div>
+        <div class="copyright"><h1>© 2025 Rivv. All rights reserved.</h1></div>
+        <div class="social flex gap-2">
+          <div class="instagram w-10 h-10 cursoreffect">
+            <a href="https://www.instagram.com/the.rivv/">
+              <img class="w-full h-full object-cover" src="instagram.svg" alt="">
+            </a>
+          </div>
+          <div class="whatsapp w-10 h-10 cursoreffect">
+            <a class="overflow-hidden" href="">
+              <img class="w-full h-full object-cover rounded-full" src="whatsapp.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script type="module" src="three.js"></script>
   <script type="module" src="script.js"></script>

@@ -6,6 +6,10 @@
 *::-webkit-scrollbar{
     display: none;
 }
+*::selection{
+    background-color: #fff;
+    color: #000;
+}
 .video{
     clip-path: circle(var(--clip)at 50% 50%);
 }
@@ -137,6 +141,15 @@
     }
     #img1,#img2{
         transition:all .1s linear;
+    }
+    .footer-bottom{
+        gap:2.5rem
+    }
+    .footer-bottom,.terms{
+        flex-direction: column;
+    }
+    .footer-top{
+        flex-direction: column;
     }
     
 }
